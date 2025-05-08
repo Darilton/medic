@@ -1,0 +1,38 @@
+<section>
+    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      MEDIC
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a class="nav-link dropdown-toggle" routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page" data-bs-toggle="dropdown">Serviços</a>
+
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Consultas</a></li>
+                    <li><a class="dropdown-item">Exames</a></li>
+                  </ul>
+                </div>
+                
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/professionals" routerLinkActive="active" ariaCurrentWhenActive="page">Profissionais</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">sobre nós</a>
+              </li>
+            </ul>
+            <button class="btn btn-primary" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Iniciar Sessão</button>
+          </div>
+        </div>
+      </nav>
+</section>
