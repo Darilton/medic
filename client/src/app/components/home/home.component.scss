@@ -1,0 +1,10 @@
+.hero{
+    background-image: url("/images/image.png");
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.blur{
+    backdrop-filter: blur(10px);
+}
