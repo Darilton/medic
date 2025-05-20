@@ -3,6 +3,8 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+api/Controllers/WeatherForecastController.cs
+api/WeatherForecast.cs
 # dotenv files
 .env
 
