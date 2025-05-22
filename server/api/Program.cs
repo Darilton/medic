@@ -1,16 +1,18 @@
 using dal;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MySql.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration["ConectionString"];
+var connectionString = builder.Configuration["ConnectionString"];
 // Add services to the container.
-
+builder.Services.AddAuthorization();
+builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+    .AddEntityFrameworkStores<MedicContext>();
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<MedicContext>(options => options.UseMySQL(connectionString));
+builder.Services.AddDbContext<MedicContext>(options => options.UseSqlite(connectionString));
 
 var app = builder.Build();
 
@@ -20,6 +22,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.MapIdentityApi<IdentityUser>();
 
 app.UseHttpsRedirection();
 
